@@ -1,0 +1,22 @@
+.thanks-bg {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+    color: #6d5c4d;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.thanks-message,
+.home-btn {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    margin: 1em auto;
+}
