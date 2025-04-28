@@ -1,5 +1,19 @@
+h1,
+.serif-title {
+    font-family: 'Merriweather', 'Noto Serif JP', serif;
+    font-weight: 700;
+    color: #6d5c4d;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid #e0ddd8;
+        padding-bottom: 0.5em;
+        margin-bottom: 1.5em;
+}
+
 body {
-    font-family: 'Yu Gothic', 'Meiryo', sans-serif;
+    font-family: 'Noto Sans JP',
+        'Yu Gothic',
+        'Meiryo',
+        sans-serif;
     background: #faf7f3;
     color: #6d5c4d;
     margin: 0;

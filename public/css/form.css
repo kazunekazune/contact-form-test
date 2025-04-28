@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+
+/* 全体背景 */
+body {
+    background: #FAF8F5;
+}
+
+/* Contactタイトル */
+.contact-title {
+    font-family: 'Inika', serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: #8B7969;
+    line-height: 1;
+    letter-spacing: 0;
+    margin: 40px 0 32px 0;
+    text-align: center;
+}
+
+/* フォーム全体 */
+form {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    background: #fff;
+    padding: 40px 40px 32px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(139, 121, 105, 0.07);
+}
+
+/* ラベル */
+form label {
+    color: #8B7969;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* 必須マーク */
+form label span {
+    color: #E2001B;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+/* 入力欄 */
+form input[type="text"],
+form input[type="email"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: none;
+    background: #F4F4F4;
+    color: #8B7969;
+    font-size: 15px;
+    border-radius: 0;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+
+/* selectのカスタム矢印 */
+form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #F4F4F4 url("data:image/svg+xml;utf8,<svg fill='8B7969' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 12px center/18px 18px;
+    padding-right: 36px;
+}
+
+/* selectの親要素にposition:relativeを指定（IE対策） */
+form select:focus {
+    outline: 2px solid #8B7969;
+}
+
+/* テキストエリア大きく */
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ラジオボタン */
+form .contact-radio-group {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+form .contact-radio-label {
+    color: #8B7969;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* ボタン */
+form button[type="submit"] {
+    background: #8B7969;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 32px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    margin: 32px auto 0 auto;
+    display: block;
+    transition: background 0.2s;
+}
+
+form button[type="submit"]:hover {
+    background: #A4927D;
+}
+
+/* エラー表示 */
+form .error {
+    color: #E2001B;
+    font-size: 13px;
+    margin-bottom: 8px;
+}

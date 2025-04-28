@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FashionablyLate</title>
-    <link rel="stylesheet" href=" {{asset('css/sanitize/css') }}">
+    <title>@yield('title', 'FashionablyLate')</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    @yield('page_css')
 </head>
+
 <body>
-    @yield('content')
+    <header>
+        <h1 class="serif-title">FashionablyLate</h1>
+    </header>
+    <main>
+        @yield('content')
+    </main>
 </body>
+
 </html>

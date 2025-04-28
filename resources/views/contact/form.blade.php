@@ -2,10 +2,14 @@
 
 @section('title', 'お問合せフォーム')
 
+@section('page_css')
+<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+@endsection
+
 @section('content')
 <form action="{{ route('contact.confirm') }}" method="post">
     @csrf
-<h1>Contact</h1>
+    <h2 class="contact-title">Contact</h2>
     <div>
         <label>お名前 <span style="color:red;">※</span></label>
         <div style="display: flex; gap: 8px;">
@@ -25,7 +29,7 @@
         <label>性別 <span style="color:red;">※</span></label>
         <label><input type="radio" name="gender" value="1" {{ old('gender') == 1 ? 'checked' : '' }}>男性</label>
         <label><input type="radio" name="gender" value="2" {{ old('gender') == 1 ? 'checked' : '' }}>女性</label>
-        <label><input type="radio" name="gender" value="3" {{ old('gender') == 1 ? 'checked' : '' }}その他</label>
+        <label><input type="radio" name="gender" value="3" {{ old('gender') == 1 ? 'checked' : '' }}>その他</label>
             @error('gender')
             <div class0"error">{{ $message }}></div>
             @enderror
@@ -61,7 +65,7 @@
 
     <div>
         <label>住所 <span style="color:red;">※</span></label>
-        <input type="text" name="address" value="{{ old('address') }}">
+        <input type="text" name="address" value="{{ old('address') }}" placeholder="例：東京都千代田区永田町1-7-1">
         @error('address')
         <div class="error">{{ $message }}</div>
         @enderror
@@ -69,7 +73,7 @@
 
     <div>
         <label>建物名</label>
-        <input type="text" name="building" value="{{ old('building') }}">
+        <input type="text" name="building" value="{{ old('building') }}" placeholder="例：永田町ビル">
     </div>
 
     <div>
@@ -89,7 +93,7 @@
 
     <div>
         <label>お問い合わせ内容 <span style="color:red;">※</span></label>
-        <textarea name="detail" maxlength="120">{{ old('detail') }}</textarea>
+        <textarea name="detail" maxlength="120" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
         @error('detail')
         <div class="error">{{ $message }}</div>
         @enderror
