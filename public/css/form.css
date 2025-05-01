@@ -5,6 +5,41 @@ body {
     background: #FAF8F5;
 }
 
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 2em;
+    margin: 2em auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+
+.styled-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #F4F4F4 url("data:image/svg+xml;utf8,<svg fill='%238B7969' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 12px center/18px 18px;
+    background-size: 1em;
+}
+
 /* Contactタイトル */
 .contact-title {
     font-family: 'Inika', serif;
@@ -24,16 +59,31 @@ form {
     background: #fff;
     padding: 40px 40px 32px 40px;
     border-radius: 8px;
-    box-shadow: 0 2px 16px rgba(139, 121, 105, 0.07);
 }
 
 /* ラベル */
-form label {
-    color: #8B7969;
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 8px;
-    display: block;
+.form-label {
+    min-width: 140px;
+        /* ラベル幅は調整OK */
+        margin-right: 0px;
+        text-align: right;
+        color: #8B7969;
+        font-size: 16px;
+        font-weight: 400;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    flex: 1;
+    margin-right: 8px;
+    /* 複数入力欄の間隔 */
+}
+
+.form-row input:last-child,
+.form-row select:last-child,
+.form-row textarea:last-child {
+    margin-right: 0;
 }
 
 /* 必須マーク */
@@ -52,7 +102,7 @@ form textarea {
     padding: 10px 12px;
     border: none;
     background: #F4F4F4;
-    color: #8B7969;
+    color: #82756A;
     font-size: 15px;
     border-radius: 0;
     margin-bottom: 24px;
@@ -73,7 +123,7 @@ form select:focus {
     outline: 2px solid #8B7969;
 }
 
-/* テキストエリア大きく */
+
 form textarea {
     min-height: 120px;
     resize: vertical;

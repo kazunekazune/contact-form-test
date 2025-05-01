@@ -1,31 +1,30 @@
 @extends('layouts.app')
 
-@section('title', 'ログイン')
+@section('title', 'Login | FashionablyLate')
+
+@section('header_button')
+<a href="/register" class="register-btn">register</a>
+@endsection
+
+@section('page_css')
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endsection
 
 @section('content')
-<h2>Login</h2>
-<form method="POST" action="{{ route('login') }}">
-    @csrf
-
-    <div>
-        <label for="email">メールアドレス</label>
-        <input id="email" type="email" name="email" value="{{ old('email') }}" required placeholder="例：test@example.com">
-        @error('email')
-        <div class="error">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <div>
-        <label for="password">パスワード</label>
-        <input id="password" type="password" name="password" required placeholder="例：coachtech106">
-        @error('password')
-        <div class="error">{{ $message }}</div>
-        @enderror
-    </div>
-
-    <button type="submit">ログイン</button>
-</form>
-<div>
-    <a href="{{ route('register') }}">register</a>
+<div class="login-container">
+    <h2 class="login-title">Login</h2>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input id="email" type="email" name="email" placeholder="例: test@example.com" required autofocus>
+        </div>
+        <div class="form-group">
+            <label for="password">パスワード</label>
+            <input id="password" type="password" name="password" placeholder="例: coachtech1106" required>
+        </div>
+        <button type="submit" class="login-btn">ログイン</button>
+        </div>
+    </form>
 </div>
 @endsection

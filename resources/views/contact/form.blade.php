@@ -10,9 +10,10 @@
 <form action="{{ route('contact.confirm') }}" method="post">
     @csrf
     <h2 class="contact-title">Contact</h2>
-    <div>
-        <label>お名前 <span style="color:red;">※</span></label>
-        <div style="display: flex; gap: 8px;">
+
+    <div class="form-row">
+        <label class="form-label">お名前 <span style="color:red;">※</span></label>
+        <div class="contact-radio-group">
             <input type="text" name="last_name" value="{{ old('last_name') }}" placeholder="例：山田" style="flex:1;">
             <input type="text" name="first_name" value="{{ old('first_name') }}" placeholder="例：太郎" style="flex:1;">
         </div>
@@ -25,17 +26,18 @@
     </div>
 
 
-    <div>
-        <label>性別 <span style="color:red;">※</span></label>
+    <div class="form-group">
+    <label>性別 <span style="color:red;">※</span></label>
+    <div class="contact-radio-group">
         <label><input type="radio" name="gender" value="1" {{ old('gender') == 1 ? 'checked' : '' }}>男性</label>
         <label><input type="radio" name="gender" value="2" {{ old('gender') == 1 ? 'checked' : '' }}>女性</label>
         <label><input type="radio" name="gender" value="3" {{ old('gender') == 1 ? 'checked' : '' }}>その他</label>
-            @error('gender')
-            <div class0"error">{{ $message }}></div>
-            @enderror
+        @error('gender')
+        <div class="error">{{ $message }}</div>
+        @enderror
     </div>
 
-    <div>
+    <div class="form-group">
         <label>メールアドレス <span style="color:red;">※</span></label>
         <input type="email" name="email" value="{{ old('email') }}" placeholder="例：test@example.com">
         @error('email')
@@ -43,7 +45,7 @@
         @enderror
     </div>
 
-    <div>
+    <div class="form-group">
         <label>電話番号 <span style="color:red;">※</span></label>
         <div style="display: flex; gap: 8px; align-items: center;">
             <input type="text" name="tel1" value="{{ old('tel1') }}" maxlength="4" placeholder="例：080" style="width: 80px;">
@@ -63,7 +65,7 @@
         @enderror
     </div>
 
-    <div>
+    <div class="form-group">
         <label>住所 <span style="color:red;">※</span></label>
         <input type="text" name="address" value="{{ old('address') }}" placeholder="例：東京都千代田区永田町1-7-1">
         @error('address')
@@ -71,12 +73,12 @@
         @enderror
     </div>
 
-    <div>
+    <div class="form-group">
         <label>建物名</label>
         <input type="text" name="building" value="{{ old('building') }}" placeholder="例：永田町ビル">
     </div>
 
-    <div>
+    <div class="form-group">
         <label>お問い合わせの種類 <span style="color:red;">※</span></label>
         <select name="category_id">
             <option value="">選択してください</option>
@@ -91,7 +93,7 @@
         @enderror
     </div>
 
-    <div>
+    <div class="form-group">
         <label>お問い合わせ内容 <span style="color:red;">※</span></label>
         <textarea name="detail" maxlength="120" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
         @error('detail')

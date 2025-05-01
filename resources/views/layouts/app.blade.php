@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <h1 class="serif-title">FashionablyLate</h1>
+        @yield('header_button')
     </header>
     <main>
         @yield('content')

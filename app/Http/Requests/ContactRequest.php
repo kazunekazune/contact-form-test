@@ -30,6 +30,7 @@ class ContactRequest extends FormRequest
             'tel2' => ['required', 'digits_between:1,5', 'regex:/^[0-9]+$/'],
             'tel3' => ['required', 'digits_between:1,5', 'regex:/^[0-9]+$/'],
             'address' => ['required'],
+            'building' => 'nullable|string|max:255',
             'category_id' => ['required'],
             'detail' => ['required', 'max:120'],
         ];

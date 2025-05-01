@@ -7,6 +7,8 @@ h1,
     border-bottom: 1px solid #e0ddd8;
         padding-bottom: 0.5em;
         margin-bottom: 1.5em;
+    text-align: center;
+    margin: auto;
 }
 
 body {
@@ -15,22 +17,44 @@ body {
         'Meiryo',
         sans-serif;
     background: #faf7f3;
-    color: #6d5c4d;
+    color: #F4ECE6;
     margin: 0;
     padding: 0;
 }
 
-header,
-footer {
-    text-align: center;
-    padding: 1em 0;
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 40px 0 40px;
+    position: relative;
+}
+
+.header-register-btn {
+    display: inline-block;
+    background: #F4F4F4;
+    color: #BEB1A6;
+    font-size: 14px;
+    padding: 4px 16px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: auto;
+    margin-top: 4px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.header-register-btn:hover {
+    background: #e0ddd8;
+    color: #8B7969;
 }
 
 main {
-    max-width: 800px;
+    max-width: auto;
     margin: 2em auto;
     background: #fff;
     padding: 2em;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }

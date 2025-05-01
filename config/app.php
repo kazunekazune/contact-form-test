@@ -164,7 +164,7 @@ return [
         //App\Providers\EventServiceProvider::class,
         //App\Providers\RouteServiceProvider::class,
 
-        // Fortifyを追加
+        // Fortify
         App\Providers\FortifyServiceProvider::class,
     ],
 
