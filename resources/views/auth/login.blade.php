@@ -11,8 +11,9 @@
 @endsection
 
 @section('content')
+<h2 class="login-title">Login</h2>
+
 <div class="login-container">
-    <h2 class="login-title">Login</h2>
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <div class="form-group">
@@ -24,7 +25,7 @@
             <input id="password" type="password" name="password" placeholder="例: coachtech1106" required>
         </div>
         <button type="submit" class="login-btn">ログイン</button>
-        </div>
-    </form>
+</div>
+</form>
 </div>
 @endsection

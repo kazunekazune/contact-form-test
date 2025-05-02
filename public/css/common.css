@@ -4,11 +4,8 @@ h1,
     font-weight: 700;
     color: #6d5c4d;
     letter-spacing: 0.05em;
-    border-bottom: 1px solid #e0ddd8;
-        padding-bottom: 0.5em;
-        margin-bottom: 1.5em;
     text-align: center;
-    margin: auto;
+    margin: 24px auto;
 }
 
 body {
@@ -16,7 +13,7 @@ body {
         'Yu Gothic',
         'Meiryo',
         sans-serif;
-    background: #faf7f3;
+    background: #fff;
     color: #F4ECE6;
     margin: 0;
     padding: 0;
@@ -28,6 +25,7 @@ body {
     justify-content: space-between;
     padding: 24px 40px 0 40px;
     position: relative;
+    border-bottom: #F4ECE6 1px solid;
 }
 
 .header-register-btn {
@@ -53,8 +51,6 @@ body {
 
 main {
     max-width: auto;
-    margin: 2em auto;
+    margin: auto;
     background: #fff;
-    padding: 2em;
-    border-radius: 8px;
 }

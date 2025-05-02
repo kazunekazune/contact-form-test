@@ -9,7 +9,10 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'content',
-    ];
+    protected $fillable = ['name'];
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }

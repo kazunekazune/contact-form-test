@@ -5,45 +5,49 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Category;
-
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Contact::query();
+        $query = Contact::with('category');
 
-        //検索機能
-    if ($request->filled('search')){
-        $search = $request->input('search');
-        $query->where(function ($q) use ($search) {
-            $q->where('name', 'like', "%{$search}%")
-                ->orWhere('email', 'like', "%{$search}%");
+        // 名前・メールアドレス検索
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
             });
-    
         }
 
-    if ($request->filled('gender')) {
-        $query->where('gender', $request->gender);
-    }
+        // 性別検索
+        if ($request->filled('gender')) {
+            $query->where('gender', $request->gender);
+        }
 
-    if ($request->filled('category_id')) {
-        $query->where('category_id', $request->category_id);
-    }
+        // カテゴリー検索
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
 
-    if ($request->filled('date')) {
-        $query->where('created_at',
-        $request->date);
-}
+        // 日付検索
+        if ($request->filled('date')) {
+            $query->whereDate('created_at', $request->date);
+        }
 
-$contacts = $query->orderBy('created_at' , 'desc')->paginate(10);
+        $contacts = $query->orderBy('created_at', 'desc')->paginate(7); // 7件ごとに表示
         $categories = Category::all();
 
-        return view('admin.index', compact('contacts'));
+        if ($request->ajax()) {
+            return response()->json(['contacts' => $contacts]);
+        }
+
+        return view('admin.index', compact('contacts', 'categories'));
     }
 
-public function show($id)
+    public function show($id)
     {
         $contact = Contact::with('category')->findOrFail($id);
         return response()->json($contact);

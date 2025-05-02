@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
 
-/* 全体背景 */
+.header {
+    background-color: #fff !important;
+    border-bottom: #F4ECE6 1px solid;
+    padding: 24px 40px 0 40px;
+}
+
+    /* 全体背景 */
 body {
     background: #FAF8F5;
 }
@@ -55,19 +61,17 @@ body {
 /* フォーム全体 */
 form {
     max-width: 700px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
     background: #fff;
     padding: 40px 40px 32px 40px;
     border-radius: 8px;
 }
-
 /* ラベル */
 .form-label {
     min-width: 140px;
         /* ラベル幅は調整OK */
         margin-right: 0px;
-        text-align: right;
-        color: #8B7969;
+        color: #8b7969;
         font-size: 16px;
         font-weight: 400;
 }
@@ -118,11 +122,6 @@ form select {
     padding-right: 36px;
 }
 
-/* selectの親要素にposition:relativeを指定（IE対策） */
-form select:focus {
-    outline: 2px solid #8B7969;
-}
-
 
 form textarea {
     min-height: 120px;
@@ -137,7 +136,7 @@ form .contact-radio-group {
 }
 
 form .contact-radio-label {
-    color: #8B7969;
+    color: #8b7969;
     font-size: 15px;
     font-weight: 400;
 }
